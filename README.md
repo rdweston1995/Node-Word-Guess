@@ -17,6 +17,9 @@ Technologies Used:
 Author:
 * Robert Weston
 
+Screenshots:
+![example screenshot](assets/images/screenshot.png)
+
 Functionality:
 * Index.js will randomly select a word from an array. That word is then passed to Word.js to create a new word object that will be the word to be guessed by the user.
     * getGuess() will run npm inquirer and npm prompt to ask the user to make a guess on a letter that will be in the word. After the user makes their guess the word object will call the checkLetter function to see if the user guess matches any of the missing letters. A for each loop will check the each letter object in the word object to see if they have been guessed. If one has been guessed then it will break the loop. If statement to check if there are still remaining letters to be guessed. If there are still letters to be guessed then it will recursively called the getGuess() function to continue asking the user for guesses.

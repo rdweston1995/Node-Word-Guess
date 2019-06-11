@@ -37,7 +37,7 @@ function getGuess(){
         if(!guessed){
             getGuess();
         }else{
-            console.log("Congrats you guessed the word!");
+            console.log("Congrats you've guessed the word!");
         }
     });
 }
