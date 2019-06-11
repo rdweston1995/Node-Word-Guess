@@ -17,7 +17,7 @@ Technologies Used:
 Author:
 * Robert Weston
 
-Screenshots:
+Screenshots
 ![example screenshot](assets/images/screenshot.png)
 
 Functionality:
