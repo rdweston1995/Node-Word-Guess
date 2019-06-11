@@ -17,8 +17,8 @@ Technologies Used:
 Author:
 * Robert Weston
 
-Screenshots
-![example screenshot](assets/images/screenshot.png)
+Screenshots:
+- ![example screenshot](assets/images/screenshot.png)
 
 Functionality:
 * Index.js will randomly select a word from an array. That word is then passed to Word.js to create a new word object that will be the word to be guessed by the user.
