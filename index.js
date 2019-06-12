@@ -60,5 +60,4 @@ function getGuess(){
         //Notify the user that the game is over because they ran out of guesses
         console.log("Sorry you ran out of guesses");
     }
-    
 }

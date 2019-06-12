@@ -3,10 +3,12 @@
 Word guess game using node command line input
 
 Deployment:
-* Clone repo
-* Run npm install
-* At command prompt run node index.js
+1. Clone repo
+2. Run npm install
+3. At command prompt run node index.js
 
+Screenshots
+![example screenshot](assets/images/screenshot.png)
 
 Technologies Used:
 * NodeJS
@@ -17,8 +19,12 @@ Technologies Used:
 Author:
 * Robert Weston
 
+<<<<<<< HEAD
 Screenshots:
 ![Example screenshot](/ex.png)
+=======
+
+>>>>>>> 352c4a3a56aee841acda3f7c862ac406962b50ea
 
 Functionality:
 * Index.js will randomly select a word from an array. That word is then passed to Word.js to create a new word object that will be the word to be guessed by the user.
