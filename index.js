@@ -6,38 +6,59 @@ var arrOfWords = ["test", "testtest", "testtesttest", "testtesttesttest"]
 var randomWord = Math.floor(Math.random() * arrOfWords.length);
 var newWord = new Word(arrOfWords[randomWord]);
 
-console.log(newWord.returnString());
-//  Prompts the user for each guess and keeps track of the user's remaining guesses
-
+//Variable to keep track of the guesses remaing
 var guesses = 10;
-var guessed = false;
 
+//Starting the game
 getGuess();
+//Function to run the game using node
 function getGuess(){
-    inquirer.prompt([
-        {
-            type: 'input',
-            message: 'Guess a letter: ',
-            name: 'guess',
-        }
-    ]).then(function(inquirerResponse){
-        var guessed = false;
-        console.log(newWord.checkLetter(inquirerResponse.guess));
-        for(key in newWord.letterArray){
-            //console.log(newWord.letterArray[key].guessed);
-            if(newWord.letterArray[key].guessed){
-                //console.log(newWord.letterArray[key].guessed);
-                guessed = true;
-            }else{
-                //console.log(newWord.letterArray[key].guessed);
-                guessed = false;
-                break;
+    //To intially display the underscores of the unguesses word
+    if(guesses == 10){
+        console.log(newWord.returnString());
+    }
+    //Showing the user how many guesses they have remaining
+    console.log("====== Guesses Remaining " + guesses + " ======");
+    //If the user hasn't ran out of guesses
+    if (guesses > 0) {
+        //Node inquirer and prompt
+        inquirer.prompt([
+            {
+                //Asking for input from the user that will be their guess
+                type: 'input',
+                message: 'Guess a letter: ',
+                name: 'guess',
             }
-        }
-        if(!guessed){
-            getGuess();
-        }else{
-            console.log("Congrats you guessed the word!");
-        }
-    });
+        ]).then(function (inquirerResponse) {
+            //Lowering guesses
+            guesses--;
+            //To check if the entire word has been guesses yet
+            var guessed = false;
+            //Updating the underscores to show the guesses letters and to change the
+            // value of each letter to true if they have been guessed
+            console.log(newWord.checkLetter(inquirerResponse.guess));
+            //For each loop to check each element of the word to check if they have been guessed
+            for (key in newWord.letterArray) {
+                if (newWord.letterArray[key].guessed) {
+                    guessed = true;
+                } else {
+                    //If any of the letters haven't been guessed break the loop and move on to the
+                    // next guess
+                    guessed = false;
+                    break;
+                }
+            }
+            //If the entire word hasn't been guessed yet
+            if (!guessed) {
+                getGuess();
+            } else {
+                //Congratulate the user that they guessed the word
+                console.log("Congrats you guessed the word!");
+            }
+        });
+    }else{
+        //Notify the user that the game is over because they ran out of guesses
+        console.log("Sorry you ran out of guesses");
+    }
+    
 }
