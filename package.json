@@ -1,0 +1,23 @@
+{
+  "name": "word-guess",
+  "version": "1.0.0",
+  "description": "Node based hangman game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdweston1995/Node-Word-Guess.git"
+  },
+  "author": "rdweston1995",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rdweston1995/Node-Word-Guess/issues"
+  },
+  "homepage": "https://github.com/rdweston1995/Node-Word-Guess#readme",
+  "dependencies": {
+    "inquirer": "^6.5.0",
+    "prompt": "^1.0.0"
+  }
+}
